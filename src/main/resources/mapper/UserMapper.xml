@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.baizhi.spring.dao.UserDao">
+	
+	<!-- 登录 -->
+	<select id="login" resultType="com.baizhi.spring.entity.User">
+		select * from auction_user where user_name=#{name} and user_password=#{password}
+	</select>
+	
+	<!-- 注册 -->
+	<insert id="register">
+		insert into auction_user values
+		(user_auction.nextval,#{user_name},#{user_password},#{user_card_no},
+		#{user_tel},#{user_address},#{user_post_number},
+		#{user_is_admin},#{user_question},#{user_answer})
+	</insert>
+	
+</mapper>

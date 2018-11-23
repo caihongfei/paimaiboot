@@ -1,0 +1,29 @@
+server:
+  port: 8081
+  context-path: /paimaiboot
+
+  jsp-servlet:
+    init-parameters:
+      development: true
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    url: jdbc:oracle:thin:@localhost:1521:xe
+    driver-class-name: oracle.jdbc.OracleDriver
+    username: zhangsan
+    password: zhangsan
+  mvc:
+    view:
+      prefix: /
+      suffix: .jsp
+  http:
+    multipart:
+      max-file-size: 90MB
+      max-request-size: 9000MB
+    encoding:
+      charset: utf-8
+      force: true
+mybatis:
+  mapper-locations: mapper/*Mapper.xml
+  type-aliases-package: com.baizhi.spring.entity
+
